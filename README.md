@@ -5,11 +5,11 @@ Steps to use.
 
 1. Place the utils folder in your dags folder.
 
-2. import slack operator in your dag like this
+2. Import slack operator in your dag like this
 
 ```from utils import slack```
 
-3. create slack object
+3. Create slack object
 
 ```slack = slack.Slack()```
 
@@ -22,5 +22,7 @@ DEFAULT_DAG_ARGS = {
     'on_success_callback': slack.task_success_slack_alert
 }
 ```
+
+5. Create a connect named SLACK_CONN_ID in your airflow dashboard where you need to specify slack webhook url.
 
 You can also use this slack operator at task level the same way.
